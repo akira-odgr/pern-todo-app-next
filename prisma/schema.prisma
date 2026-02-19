@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model todo {
+  todo_id     Int      @id @default(autoincrement())
+  description String   @db.VarChar(255)
+  completed   Boolean? @default(false)
+}
